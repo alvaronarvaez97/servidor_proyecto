@@ -1,0 +1,10 @@
+FROM python:3.9
+
+ENV DASH_DEBUG_MODE True
+
+WORKDIR /app
+RUN set -ex && \
+    pip install dash numpy pandas scipy 
+COPY ./app /app
+EXPOSE 8050
+CMD ["python", "app.py"]
