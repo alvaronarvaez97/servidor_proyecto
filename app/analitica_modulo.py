@@ -101,7 +101,7 @@ class analitica():
         linear_regressor.fit(X, Y)
         Y_pred = linear_regressor.predict(nuevos_tiempos.reshape(-1, 1))
         for tiempo, prediccion in zip(nuevos_tiempos, Y_pred):
-            time_format = datetime.utcfromtimestamp(tiempo)
+            time_format = datetime.datetime.fromtimestamp(tiempo)
             date_time = time_format.replace(tzinfo=datetime.timezone(datetime.timedelta(hours=-5))).isoformat()
             self.publicar("prediccion-{}".format(sensor),"{topic:{},payload:{},timestamp:{}}".format(sensor,prediccion[0],date_time))
     @staticmethod
