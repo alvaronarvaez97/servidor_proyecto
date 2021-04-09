@@ -55,7 +55,7 @@ class analitica():
             self.publicar("alerta-temperatura","La humedad estable")
 
         self.analitica_descriptiva()
-        self.analitica_predictiva()
+        #self.analitica_predictiva()
         self.guardar()
 
     def print_data(self):
