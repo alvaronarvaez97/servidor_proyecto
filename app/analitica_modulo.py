@@ -36,17 +36,23 @@ class analitica():
         self.publicar("temperatura",msj_vetor[1])
         self.publicar("humedad",msj_vetor[3])
 
-        if msj_vetor[1] > str(33):
+        if msj_vetor[1] > str(31):
             self.publicar("alerta-temperatura","La temperatura esta por enciama del valor nominal")
 
-        if msj_vetor[1] < str(30):
+        if msj_vetor[1] >= str(31) and msj_vetor[1] =< str(31):
+            self.publicar("alerta-temperatura","La temperatura estable")
+
+        if msj_vetor[1] < str(27):
             self.publicar("alerta-temperatura","La temperatura esta por debajo del valor nominal")
         
-        if msj_vetor[3] > str(70):
+        if msj_vetor[3] > str(85):
             self.publicar("alerta-humedad","La humedad esta por enciama del valor nominal")
 
-        if msj_vetor[3] > str(60):
+        if msj_vetor[3] > str(70):
             self.publicar("alerta-humedad","La humedad esta por debajo del valor nominal")
+
+        if msj_vetor[3] >= str(85) and msj_vetor[3] =< str(70):
+            self.publicar("alerta-temperatura","La humedad estable")
 
         self.analitica_descriptiva()
         self.analitica_predictiva()
