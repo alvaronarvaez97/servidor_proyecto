@@ -52,8 +52,8 @@ class analitica():
         if msj_vetor[3] < str(70):
             self.publicar("alerta-humedad","La humedad esta por debajo del valor nominal")
 
-        if msj_vetor[3] > str(85):
-            if msj_vetor[3] < str(70):
+        if msj_vetor[3] < str(85):
+            if msj_vetor[3] > str(70):
                 self.publicar("alerta-humedad","La humedad estable")
 
         self.analitica_descriptiva()
